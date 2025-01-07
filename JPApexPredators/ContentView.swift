@@ -12,8 +12,10 @@ struct ContentView: View {
     let predators = Predators()
     
     @State var searchText = ""
+    @State var isAlphabetical = false
     
     var filteredDino: [ApexPredator]{ //computed property
+        predators.sort(by: isAlphabetical)
         // if no search term give all dino back else filter
         return predators.search(for: searchText)
     }
@@ -57,6 +59,19 @@ struct ContentView: View {
             .searchable(text: $searchText)  //automatically create search bar and bind to search text
             .autocorrectionDisabled()
             .animation(.default, value: searchText) // make sure there is some animation when filtering
+            .toolbar{
+                ToolbarItem(placement: .topBarLeading){
+                    Button{
+                        withAnimation{
+                            isAlphabetical.toggle()
+                        }
+                    }label: {
+                        // we are showing what we can sort by
+                        Image(systemName: isAlphabetical ? "film" : "textformat")
+                            .symbolEffect(.bounce, value: isAlphabetical)
+                    }
+                }
+            }
         }
         .preferredColorScheme(.dark)
     }

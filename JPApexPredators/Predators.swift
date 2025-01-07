@@ -44,5 +44,17 @@ class Predators{
         }
     }
     
+    // can sort either by alphebetical or movie appearance (id)
+    func sort(by alphabetical: Bool) {
+        apexPredators.sort(){
+            predator1, predator2 in
+            if alphabetical{
+                predator1.name < predator2.name
+            }else{
+                predator1.id < predator2.id
+            }
+        }
+    }
+    
     
 }
