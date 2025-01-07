@@ -33,5 +33,16 @@ class Predators{
         }
     }
     
+    func search(for searchTerm: String) -> [ApexPredator]{
+        if searchTerm.isEmpty{
+            return apexPredators
+        }else{
+            return apexPredators.filter{ //if true add to predator collection
+                predator in
+                predator.name.localizedCaseInsensitiveContains(searchTerm) //filter to have predators that have name on searchText
+            }
+        }
+    }
+    
     
 }

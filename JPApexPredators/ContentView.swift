@@ -15,14 +15,7 @@ struct ContentView: View {
     
     var filteredDino: [ApexPredator]{ //computed property
         // if no search term give all dino back else filter
-        if searchText.isEmpty{
-            return predators.apexPredators
-        }else{
-            return predators.apexPredators.filter{ //if true add to predator collection
-                predator in
-                predator.name.localizedCaseInsensitiveContains(searchText) //filter to have predators that have name on searchText
-            }
-        }
+        return predators.search(for: searchText)
     }
     
     var body: some View {
