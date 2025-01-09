@@ -10,8 +10,8 @@ import Foundation //have some decoding stuff
 // Manipulate data to ready for view
 
 class Predators{
-    
-    var apexPredators: [ApexPredator] = [] //need to change data
+    var allApexPredators: [ApexPredator] = [] // this list is not going to change (master list to handle filter case)
+    var apexPredators: [ApexPredator] = [] //will change data depending on filter
     
     init(){
         decodeApexPredatorData() //when predator is initialize all the data will get coded
@@ -26,7 +26,8 @@ class Predators{
                 let data = try Data(contentsOf: url) // try to get data from json file and store at data property
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase //convert json snake case with _ to camel case
-                apexPredators = try decoder.decode([ApexPredator].self, from: data) // decode json data
+                allApexPredators = try decoder.decode([ApexPredator].self, from: data) // decode json data
+                apexPredators = allApexPredators
             }catch{
                 print("Error decoding JSON Data \(error)")
             }
@@ -61,9 +62,9 @@ class Predators{
     // filter -> create a tmp list (actual list hasn't changed)
     func filter(by type: APType){
         if type == .all{
-            
+            apexPredators = allApexPredators
         }else{
-            apexPredators = apexPredators.filter {
+            apexPredators = allApexPredators.filter {
                 predator in
                 predator.type == type
             }
