@@ -45,6 +45,7 @@ class Predators{
     }
     
     // can sort either by alphebetical or movie appearance (id)
+    // sort -> in place method -> modify the list itself
     func sort(by alphabetical: Bool) {
         apexPredators.sort(){
             predator1, predator2 in
@@ -53,6 +54,15 @@ class Predators{
             }else{
                 predator1.id < predator2.id
             }
+        }
+    }
+    
+   
+    // filter -> create a tmp list (actual list hasn't changed)
+    func filter(by type: APType){
+        apexPredators = apexPredators.filter {
+            predator in
+            predator.type == type
         }
     }
     

@@ -71,6 +71,14 @@ struct ContentView: View {
                             .symbolEffect(.bounce, value: isAlphabetical)
                     }
                 }
+                
+                ToolbarItem(placement: .topBarTrailing){
+                    Menu{
+                        
+                    }label:{
+                        Image(systemName: "slider.horizontal.3")
+                    }
+                }
             }
         }
         .preferredColorScheme(.dark)

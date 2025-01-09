@@ -26,21 +26,21 @@ struct ApexPredator: Decodable, Identifiable { //Decodable protocol json to swif
         let movie: String
         let sceneDescription: String
     }
+}
+
+enum APType: String, Decodable { // raw value to be string
+    case land // "land"
+    case air // "air"
+    case sea // "sea"
     
-    enum APType: String, Decodable { // raw value to be string
-        case land // "land"
-        case air // "air"
-        case sea // "sea"
-        
-        var background: Color {
-            switch self {
-            case .land:
+    var background: Color {
+        switch self {
+        case .land:
                 .brown
-            case .air:
+        case .air:
                 .teal
-            case .sea:
+        case .sea:
                 .blue
-            }
         }
     }
 }
