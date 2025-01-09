@@ -28,7 +28,13 @@ struct ApexPredator: Decodable, Identifiable { //Decodable protocol json to swif
     }
 }
 
-enum APType: String, Decodable { // raw value to be string
+enum APType: String, Decodable, CaseIterable, Identifiable {
+    var id: APType{
+        self
+    }
+    // raw value to be string
+    
+    case all
     case land // "land"
     case air // "air"
     case sea // "sea"
@@ -41,6 +47,21 @@ enum APType: String, Decodable { // raw value to be string
                 .teal
         case .sea:
                 .blue
+        case .all:
+                .black
+        }
+    }
+    
+    var icon: String{
+        switch self {
+        case .land:
+                "leaf.fill"
+        case .air:
+                "wind"
+        case .sea:
+                "drop.fill"
+        case .all:
+                "square.stack.3d.up.fill"
         }
     }
 }

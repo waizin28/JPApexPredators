@@ -13,8 +13,12 @@ struct ContentView: View {
     
     @State var searchText = ""
     @State var isAlphabetical = false
+    @State var currentSelection = APType.all
     
     var filteredDino: [ApexPredator]{ //computed property
+        
+        predators.filter(by: currentSelection)
+        
         predators.sort(by: isAlphabetical)
         // if no search term give all dino back else filter
         return predators.search(for: searchText)
@@ -72,9 +76,14 @@ struct ContentView: View {
                     }
                 }
                 
+                // select dino by type
                 ToolbarItem(placement: .topBarTrailing){
                     Menu{
-                        
+                        Picker("Filter", selection: $currentSelection){
+                            ForEach(APType.allCases) { type in
+                                Label(type.rawValue.capitalized, systemImage: type.icon)
+                            }
+                        }
                     }label:{
                         Image(systemName: "slider.horizontal.3")
                     }

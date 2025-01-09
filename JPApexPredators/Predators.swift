@@ -60,11 +60,13 @@ class Predators{
    
     // filter -> create a tmp list (actual list hasn't changed)
     func filter(by type: APType){
-        apexPredators = apexPredators.filter {
-            predator in
-            predator.type == type
+        if type == .all{
+            
+        }else{
+            apexPredators = apexPredators.filter {
+                predator in
+                predator.type == type
+            }
         }
     }
-    
-    
 }
