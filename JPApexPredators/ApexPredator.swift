@@ -5,6 +5,7 @@
 //  Created by Wai Zin Linn on 1/7/25.
 //
 import SwiftUI
+import MapKit
 
 struct ApexPredator: Decodable, Identifiable { //Decodable protocol json to swift format
     let id: Int
@@ -19,6 +20,10 @@ struct ApexPredator: Decodable, Identifiable { //Decodable protocol json to swif
     var image: String {
         //taking advantage of the fact that image name is similar to dinosaur name
         name.lowercased().replacingOccurrences(of: " ", with: "")
+    }
+    
+    var location: CLLocationCoordinate2D{
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
     struct MovieScene: Decodable, Identifiable {

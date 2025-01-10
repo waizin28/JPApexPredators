@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct PredatorDetail: View {
     
     let predator: ApexPredator
+    @State var position: MapCameraPosition
     
     var body: some View {
         GeometryReader { geo in
@@ -42,12 +44,41 @@ struct PredatorDetail: View {
                     // Name of Dino
                     Text(predator.name)
                         .font(.largeTitle)
-                    
-                    // Current Location
+                    NavigationLink{
+                        Image(predator.image)
+                    }label: {
+                        // Current Location
+                        Map(position: $position){
+                            Annotation(predator.name,
+                                coordinate: predator.location){
+                                Image(systemName: "mappin.and.ellipse")
+                                    .font(.largeTitle)
+                                    .imageScale(.large)
+                                    .symbolEffect(.pulse)
+                            }
+                            .annotationTitles(.hidden) //hide title
+                        }
+                        .frame(height: 125)
+                        .overlay(alignment: .trailing){
+                            Image(systemName: "greaterthan")
+                                .imageScale(.large)
+                                .font(.title3)
+                                .padding(.trailing, 15)
+                        }
+                        .overlay(alignment: .topLeading){
+                            Text("Current Location")
+                                .padding([.leading, .bottom], 5)
+                                .padding(.trailing, 8)
+                                .background(.black.opacity(0.33))
+                                .clipShape(.rect(bottomTrailingRadius: 15))
+                        }
+                        .clipShape(.rect(cornerRadius: 15))
+                    }
                     
                     // List of movies dino appear in
                     Text("Appear In:")
                         .font(.title3)
+                        .padding(.top, 15)
                     
                     ForEach(predator.movies, id: \.self){
                         movie in
@@ -79,11 +110,22 @@ struct PredatorDetail: View {
                     
                 }.padding().padding(.bottom).frame(width: geo.size.width, alignment: .leading) // to add alignment to the vstack itself, otherwise will be at center
             }
-        }.ignoresSafeArea()
+        }
+        .ignoresSafeArea()
+        .toolbarBackground(.automatic)
     }
 }
 
 #Preview {
-    PredatorDetail(predator: Predators().apexPredators[2])
-//        .preferredColorScheme(.dark)
+    let predator = Predators().apexPredators[2]
+    
+    NavigationStack{
+        
+        PredatorDetail(predator: predator, position: .camera(
+            MapCamera(
+                centerCoordinate: predator.location,
+                distance: 30000
+            )))
+        .preferredColorScheme(.dark)
+    }// let this preview know that there is navigation stack at upper level
 }
