@@ -3,6 +3,13 @@
 Welcome to **JPApexPredators**, the ultimate app for exploring and learning about the fascinating dinosaurs of Jurassic Park! This app provides detailed information about various dinosaur species, their behaviors, habitats, and roles within the Jurassic ecosystem. Whether you’re a paleontology enthusiast, a Jurassic Park fan, or just curious about dinosaurs, this app is your gateway to the prehistoric world.
 
 ---
+## App Screenshot
+
+<p align="center">
+  <img src="Screenshots/home-no-bg.png" alt="Home Screen" width="30%" />
+  <img src="Screenshots/detail-no-bg.png" alt="Detail Screen" width="30%" />
+  <img src="Screenshots/map-no-bg.png" alt="Map Screen" width="30%" />
+</p>
 
 ## Features
 
