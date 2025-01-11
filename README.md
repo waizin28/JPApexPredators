@@ -50,7 +50,7 @@ Welcome to **JPApexPredators**, the ultimate app for exploring and learning abou
 
 1. **Clone the Repository**:  
    ```bash
-   git clone https://github.com/yourusername/JPApexPredators.gitay with **JPApexPredators** and explore the mysteries of prehistoric life!
+   git clone https://github.com/yourusername/JPApexPredators.git
 
 2. **Open in Xcode**:
 Navigate to the project folder and open JPApexPredators.xcodeproj in Xcode.
