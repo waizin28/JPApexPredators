@@ -5,19 +5,10 @@ Welcome to **JPApexPredators**, the ultimate app for exploring and learning abou
 ---
 ## App Screenshot
 
-<p align="center" style="display: flex;">
-  <figure style="margin: 0; text-align: center;">
-    <img src="Screenshots/home.png" alt="Home Screen" width="150" />
-    <figcaption>Home Screen</figcaption>
-  </figure>
-  <figure style="margin: 0; text-align: center;">
-    <img src="Screenshots/detail.png" alt="Detail Screen" width="150" />
-    <figcaption>Detail Screen</figcaption>
-  </figure>
-  <figure style="margin: 0; text-align: center;">
-    <img src="Screenshots/map.png" alt="Map Screen" width="150" />
-    <figcaption>Map Screen</figcaption>
-  </figure>
+<p align="center">
+  <img src="Screenshots/home.png" alt="Home Screen" width="30%" />
+  <img src="Screenshots/detail.png" alt="Detail Screen" width="30%" />
+  <img src="Screenshots/map.png" alt="Map Screen" width="30%" />
 </p>
 
 
