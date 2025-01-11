@@ -44,6 +44,7 @@ struct PredatorMap: View {
                     .padding()
             }
         }
+        .toolbarBackground(.automatic) // to look good when navigating
     }
 }
 
