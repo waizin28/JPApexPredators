@@ -6,9 +6,9 @@ Welcome to **JPApexPredators**, the ultimate app for exploring and learning abou
 ## App Screenshot
 
 <p align="center">
-  <img src="Screenshots/home-no-bg.png" alt="Home Screen" width="30%" />
-  <img src="Screenshots/detail-no-bg.png" alt="Detail Screen" width="30%" />
-  <img src="Screenshots/map-no-bg.png" alt="Map Screen" width="30%" />
+  <img src="Screenshots/home.png" alt="Home Screen" width="30%" />
+  <img src="Screenshots/detail.png" alt="Detail Screen" width="30%" />
+  <img src="Screenshots/map.png" alt="Map Screen" width="30%" />
 </p>
 
 ## Features
