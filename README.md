@@ -5,7 +5,7 @@ Welcome to **JPApexPredators**, the ultimate app for exploring and learning abou
 ---
 ## App Screenshot
 
-<p align="center" style="display: flex; justify-content: center; gap: 20px;">
+<p align="center" style="display: flex;">
   <figure style="margin: 0; text-align: center;">
     <img src="Screenshots/home.png" alt="Home Screen" width="150" />
     <figcaption>Home Screen</figcaption>
